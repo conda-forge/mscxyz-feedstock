@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: c981fe202935227d34a5eef787d3943506c2953b460764693aab163994c6fdeb
+  entry_points:
+    - mscx-manager=mscxyz:execute
 
 build:
   noarch: python
