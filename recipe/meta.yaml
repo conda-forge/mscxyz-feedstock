@@ -1,5 +1,5 @@
 {% set name = "mscxyz" %}
-{% set version = "1.3.0" %}
+{% set version = "1.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,22 +7,26 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 47bbdb7c4316e39f2eb4c4866d5eea42f8004810dc62bbdadca6dab9efa22749
+  sha256: c981fe202935227d34a5eef787d3943506c2953b460764693aab163994c6fdeb
 
 build:
   noarch: python
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
+  entry_points:
+  - mscx-manager=mscxyz:execute
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.8
+    - poetry >=1.2.0b2
   run:
-    - lxml
-    - python >=3.6
-    - termcolor
-    - tmep >=2.0.1
+    - lxml >=5.0.0,<6.0.0
+    - python >=3.8
+    - termcolor >=2.4.0,<3.0.0
+    - tmep >=2.3.3,<2.4.0
+    - lxml-stubs >=0.4.0,<0.5.0
 
 test:
   imports:
