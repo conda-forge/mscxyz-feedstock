@@ -14,7 +14,8 @@ build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - mscx-manager=mscxyz:execute
+    - mscx-manager=mscxyz.cli_legacy:execute
+    - musescore-manager=mscxyz.cli:execute
 
 requirements:
   host:
@@ -35,6 +36,7 @@ test:
   commands:
     - pip check
     - mscx-manager -h
+    - musescore-manager -h
   requires:
     - pip
 
