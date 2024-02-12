@@ -14,19 +14,18 @@ build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - mscx-manager=mscxyz.cli_legacy:execute
     - musescore-manager=mscxyz.cli:execute
 
 requirements:
   host:
     - pip
     - python >=3.9,<4.0
-    - poetry >=1.2.0b2
+    - poetry-core
   run:
     - python >=3.9,<4.0
     - lxml >=5.1.0,<6.0.0
     - termcolor >=2.4.0,<3.0.0
-    - tmep >=2.4.0,<3.0.0
+    - tmep >=3.0.0,<4.0.0
     - lxml-stubs >=0.5.1,<0.6.0
     - shtab >=1.6.5,<2.0.0
 
@@ -35,7 +34,6 @@ test:
     - mscxyz
   commands:
     - pip check
-    - mscx-manager -h
     - musescore-manager -h
   requires:
     - pip
