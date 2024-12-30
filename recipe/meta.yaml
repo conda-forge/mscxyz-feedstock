@@ -1,13 +1,14 @@
 {% set name = "mscxyz" %}
-{% set version = "3.0.0" %}
+{% set version = "4.0.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 36c4a8e9be33acd63c124b141e60078e883b33e81865966bf8ca7f18a68f5b85
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: ace35c10c0d046022c1325030cd5dfbee3a101a1c0e91388ea6d7ed24d1ad381
 
 build:
   noarch: python
@@ -19,15 +20,15 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.9,<4.0
+    - python {{ python_min }}
     - poetry-core
   run:
-    - python >=3.9,<4.0
-    - lxml >=5.1.0,<6.0.0
-    - termcolor >=2.4.0,<3.0.0
+    - python >={{ python_min }}
+    - lxml >=5.3.0,<6.0.0
+    - termcolor >=2.5.0,<3.0.0
     - tmep >=3.0.0,<4.0.0
     - lxml-stubs >=0.5.1,<0.6.0
-    - shtab >=1.6.5,<2.0.0
+    - shtab >=1.7.1,<2.0.0
 
 test:
   imports:
@@ -37,6 +38,7 @@ test:
     - musescore-manager -h
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/Josef-Friedrich/mscxyz
