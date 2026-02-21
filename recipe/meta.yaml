@@ -1,5 +1,5 @@
 {% set name = "mscxyz" %}
-{% set version = "4.0.0" %}
+{% set version = "4.1.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ace35c10c0d046022c1325030cd5dfbee3a101a1c0e91388ea6d7ed24d1ad381
+  sha256: 51cbdf013eee48b098c40d443616efad312d4d33eb5c0daa2b4b1b466683642d
 
 build:
   noarch: python
