@@ -1,6 +1,5 @@
 {% set name = "mscxyz" %}
 {% set version = "4.1.0" %}
-{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -21,14 +20,14 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - poetry-core
+    - uv_build >=0.10.4,<0.11.0
   run:
     - python >={{ python_min }}
-    - lxml >=5.3.0,<6.0.0
-    - termcolor >=2.5.0,<3.0.0
-    - tmep >=3.0.0,<4.0.0
-    - lxml-stubs >=0.5.1,<0.6.0
-    - shtab >=1.7.1,<2.0.0
+    - lxml >=6.0.2
+    - termcolor >=3.3.0
+    - tmep >=4.0.0
+    - lxml-stubs >=0.5.1
+    - shtab >=1.8.0
 
 test:
   imports:
