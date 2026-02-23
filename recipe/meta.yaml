@@ -20,7 +20,7 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - uv_build >=0.10.4,<0.11.0
+    - uv-build >=0.10.4,<0.11.0
   run:
     - python >={{ python_min }}
     - lxml >=6.0.2
