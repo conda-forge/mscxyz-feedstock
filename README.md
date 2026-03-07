@@ -15,7 +15,6 @@ Documentation: https://mscxyz.readthedocs.io/
 
 Manipulate the XML based mscx files of the notation software MuseScore.
 
-
 Current build status
 ====================
 
